@@ -5,88 +5,33 @@
   vars:
     homebrew_taps:
       - caskroom/cask
-      - motemen/ghq
-      - homebrew/php
       - sanemat/font
-      
     homebrew_packages:
-      - { name: readline }
-      - { name: openssl }
-      - { name: openssl, state: linked, install_options: force }
       - { name: python }
-      - { name: python3 }
       - { name: pyenv }
       - { name: ansible }
-      - { name: heroku-toolbelt }
       - { name: git }
-      - { name: hub }
-      - { name: zsh, install_options: disable-etcdir }
-      - { name: zsh-completions }
-      - { name: wget }
+      - { name: git-secrets }
+      - { name: zsh }
       - { name: curl }
       - { name: nkf }
+      - { name: jq }
+      - { name: jid }
+      - { name: go }
+      - { name: direnv }
       - { name: peco }
+      - { name: tig }
       - { name: rbenv }
       - { name: ruby-build }
-      - { name: mysql }
-      - { name: sqlite }
-      - { name: redis }
-      - { name: imagemagick }
-    #  - { name: maven }
-      - { name: macvim, options: 'override-system-vim', 'with-lua', 'with-cscope' }
-      - { name: ghq }
-    #  - { name: php56 }
-    #  - { name: php56-xdebug }
-    #  - { name: phpenv }
-      - { name: automake }
-      - { name: graphviz }
-      - { name: doxygen }
+      - { name: ricty, install_options: [ '--vim-powerline', '--powerline' ] }
 
     homebrew_cask_packages:
-      - { name: adobe-reader }
-      - { name: alfred }
-    #  - { name: android-studio }
-      - { name: appcleaner }
-      - { name: base }
-      - { name: cyberduck }
-      - { name: coteditor }
-      - { name: duet }
-      - { name: dash }
-      - { name: dropbox }
-      - { name: emacs }
-      - { name: firefox }
-      - { name: fluid }
-      - { name: flux }
-    #  - { name: genymotion }
-      - { name: github }
-      - { name: google-chrome }
-      - { name: google-japanese-ime }
-    #  - { name: gyazo }
-    #  - { name: hipchat }
-    #  - { name: hoster }
-    #  - { name: intellij-idea }
       - { name: iterm2 }
-      - { name: java }
-      - { name: karabiner }
-      - { name: kindle }
-      - { name: kobito }
-      - { name: licecap }
-      - { name: mysqlworkbench }
-      - { name: pycharm }
-      - { name: rdm }
-      - { name: seil }
-      - { name: sequel-pro }
+      - { name: firefox }
+      - { name: google-chrome }
       - { name: skype }
       - { name: slack }
-      - { name: sourcetree }
-      - { name: sublime-text }
-      - { name: seil }
-      - { name: xtrafinder }
-      - { name: vagrant }
-      - { name: virtualbox }
-    #  - { name: 1password }
-    gem_packages:
-      - { name: homesick }
+      - { name: skitch }
 
   tasks:
     - name: homebrew の tap リポジトリを追加
@@ -116,7 +61,7 @@
 
     # cask
     - name: homebrew-cask のインストール
-      homebrew: name=brew-cask state=latest
+      homebrew: name=cask state=latest
     - name: cask パッケージをインストール
       homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
       with_items: homebrew_cask_packages
@@ -127,15 +72,6 @@
       shell: brew cask info {{ item }} > cask_info/{{ item }}
       with_items: cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
 
-    # gem
-    - name: gem パッケージのインストール
-      gem: name={{ item.name }} state={{ item.state | default('latest') }}
-      with_items: gem_packages
-  
-    # nodebrew
-    - name: nodebrew のインストール
-      shell: curl -L git.io/nodebrew | perl - setup
-      
     # oh-my-zsh
     - name: oh-my-zsh のインストール
       shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -155,13 +91,6 @@
         creates: ~/Library/Fonts/Ricty-Bold.ttf
       notify: run fc-cache
     
-    # vim-neobundle
-    - name: mkdir vim-neobundle dir
-      file: path=~/.vim/bundle state=directory
-      notify: install neobundle
-  
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
-    - name: install neobundle
-      command: git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
