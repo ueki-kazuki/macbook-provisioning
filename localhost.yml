@@ -7,35 +7,42 @@
       - caskroom/cask
       - sanemat/font
     homebrew_packages:
-      - { name: python }
-      - { name: pyenv }
       - { name: ansible }
+      - { name: curl }
+      - { name: direnv }
+      - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
       - { name: git }
       - { name: git-secrets }
-      - { name: zsh }
-      - { name: curl }
-      - { name: nkf }
-      - { name: jq }
-      - { name: jid }
       - { name: go }
-      - { name: direnv }
+      - { name: jid }
+      - { name: jq }
+      - { name: nkf }
+      - { name: node }
+      - { name: nvm }
       - { name: peco }
-      - { name: tig }
+      - { name: pyenv }
+      - { name: python }
       - { name: rbenv }
-      - { name: ruby-build }
-      - { name: ricty, install_options: [ '--vim-powerline', '--powerline' ] }
-      - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
       - { name: redpen }
+      - { name: ricty, install_options: [ '--vim-powerline', '--powerline' ] }
+      - { name: ruby-build }
       - { name: rust }
+      - { name: tig }
+      - { name: vim }
+      - { name: zsh }
       #- { name: Caskroom/cask/cargo }
 
     homebrew_cask_packages:
-      - { name: iterm2 }
+      - { name: evernote }
       - { name: firefox }
       - { name: google-chrome }
+      - { name: iterm2 }
+      - { name: skitch }
       - { name: skype }
       - { name: slack }
-      - { name: skitch }
+      - { name: visual-studio-code }
+      - { name: vlc }
+      #- { name: vmware-fusion }
 
   tasks:
     - name: homebrew の tap リポジトリを追加
@@ -81,7 +88,7 @@
       shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
       args:
         creates: ~/.oh-my-zsh/
-    
+ 
     # Ricty
     - name: xquartz のインストール (for Ricty)
       homebrew_cask: name=xquartz
@@ -98,7 +105,7 @@
     # Cargo
     #- name: cargo パッケージのインストール
     #  shell: cargo install git-brws
-    
+ 
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
