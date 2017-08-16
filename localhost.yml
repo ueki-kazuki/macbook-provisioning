@@ -9,6 +9,8 @@
       - itchyny/fillin
     homebrew_packages:
       - { name: ansible }
+      - { name: awscli }
+      - { name: certbot }
       - { name: curl }
       - { name: direnv }
       - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
