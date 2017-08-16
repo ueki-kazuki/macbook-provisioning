@@ -6,11 +6,14 @@
     homebrew_taps:
       - caskroom/cask
       - sanemat/font
+      - itchyny/fillin
     homebrew_packages:
       - { name: ansible }
       - { name: curl }
       - { name: direnv }
       - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
+      - { name: fillin }
+      - { name: gcc }
       - { name: git }
       - { name: git-secrets }
       - { name: go }
