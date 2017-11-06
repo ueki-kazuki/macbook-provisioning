@@ -9,12 +9,14 @@
       - itchyny/fillin
     homebrew_packages:
       - { name: ansible }
+      #- { name: azure-cli }
       - { name: awscli }
       - { name: certbot }
       - { name: curl }
       - { name: direnv }
       - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
       - { name: fillin }
+      - { name: fish }
       - { name: gcc }
       - { name: git }
       - { name: git-secrets }
