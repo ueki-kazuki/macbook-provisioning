@@ -18,7 +18,9 @@
       - { name: fillin }
       - { name: fish }
       - { name: gcc }
+      - { name: ghq }
       - { name: git }
+      - { name: gimp }
       - { name: git-secrets }
       - { name: go }
       - { name: jid }
