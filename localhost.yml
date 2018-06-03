@@ -11,6 +11,7 @@
       - { name: ansible }
       #- { name: azure-cli }
       - { name: awscli }
+      - { name: aws-elasticbeanstalk }
       - { name: certbot }
       - { name: curl }
       - { name: direnv }
@@ -20,7 +21,6 @@
       - { name: gcc }
       - { name: ghq }
       - { name: git }
-      - { name: gimp }
       - { name: git-secrets }
       - { name: go }
       - { name: jid }
@@ -44,6 +44,7 @@
     homebrew_cask_packages:
       - { name: evernote }
       - { name: firefox }
+      - { name: gimp }
       - { name: google-chrome }
       - { name: iterm2 }
       - { name: skitch }
