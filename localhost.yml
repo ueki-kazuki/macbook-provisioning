@@ -4,7 +4,7 @@
   sudo: no
   vars:
     homebrew_taps:
-      - caskroom/cask
+      - homebrew/cask
       - sanemat/font
       - itchyny/fillin
     homebrew_packages:
