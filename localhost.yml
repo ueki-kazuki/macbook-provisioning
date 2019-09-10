@@ -18,6 +18,7 @@
       - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
       - { name: fillin }
       - { name: fish }
+      - { name: fujiwara/tap/aswrap }
       - { name: gcc }
       - { name: ghq }
       - { name: git }
@@ -38,7 +39,7 @@
       - { name: rust }
       - { name: tig }
       - { name: vim }
-      - { name: zsh }
+      #- { name: zsh }
       #- { name: Caskroom/cask/cargo }
 
     homebrew_cask_packages:
@@ -95,10 +96,10 @@
       with_items: "{{ cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list }}"
 
     # oh-my-zsh
-    - name: oh-my-zsh のインストール
-      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-      args:
-        creates: ~/.oh-my-zsh/
+    #- name: oh-my-zsh のインストール
+    #  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    #  args:
+    #    creates: ~/.oh-my-zsh/
  
     # Ricty
     - name: xquartz のインストール (for Ricty)
