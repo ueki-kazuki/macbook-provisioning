@@ -15,7 +15,7 @@
       - { name: certbot }
       - { name: curl }
       - { name: direnv }
-      - { name: emacs, install_options: [ '--with-cocoa', '--srgb=emacs' ] }
+      - { name: emacs }
       - { name: fillin }
       - { name: fish }
       - { name: fujiwara/tap/aswrap }
@@ -34,7 +34,7 @@
       - { name: python }
       - { name: rbenv }
       - { name: redpen }
-      - { name: ricty, install_options: [ '--vim-powerline', '--powerline' ] }
+      - { name: ricty, install_options: [ '--with-powerline' ] }
       - { name: ruby-build }
       - { name: rust }
       - { name: tig }
