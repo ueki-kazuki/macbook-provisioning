@@ -1,3 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -vv localhost.yml
+if !(which brew > /dev/null); then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+brew install mas
+brew bundle

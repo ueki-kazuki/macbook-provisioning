@@ -1,88 +1,52 @@
+tap "fujiwara/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "itchyny/fillin"
+tap "sanemat/font"
+brew "ansible"
+brew "aws-elasticbeanstalk"
+brew "awscli"
+brew "brew-cask-completion"
+brew "certbot"
+brew "curl"
+brew "direnv"
+brew "emacs"
+brew "fish"
+brew "gcc"
+brew "ghq"
+brew "git"
+brew "git-secrets"
+brew "go"
+brew "jid"
+brew "jq"
+brew "nkf"
+brew "node"
+brew "nvm"
+brew "peco"
+brew "pyenv"
+brew "python"
+brew "rbenv"
+brew "redpen"
+brew "rust"
+brew "terraform"
+brew "tig"
+brew "vim"
+brew "argon/mas/mas"
+brew "fujiwara/tap/aswrap"
+brew "rcmdnk/file/brew-file"
 
-# tap repositories and their packages
+cask "clipy"
+cask "google-chrome"
+cask "google-drive-file-stream"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "slack"
+cask "visual-studio-code"
 
-tap homebrew/core
-brew ansible
-brew augeas
-brew autoconf
-brew aws-elasticbeanstalk
-brew awscli
-brew brew-cask-completion
-brew certbot
-brew curl
-brew dialog
-brew direnv
-brew emacs
-brew fish
-brew gcc
-brew gdbm
-brew gettext
-brew ghq
-brew git
-brew git-secrets
-brew gmp
-brew gnutls
-brew go
-brew icu4c
-brew isl
-brew jid
-brew jq
-brew libevent
-brew libffi
-brew libidn2
-brew libmpc
-brew libssh2
-brew libtasn1
-brew libunistring
-brew libyaml
-brew lua
-brew mpfr
-brew nettle
-brew nkf
-brew node
-brew nvm
-brew oniguruma
-brew openjdk
-brew openssl@1.1
-brew p11-kit
-brew pcre2
-brew peco
-brew perl
-brew pkg-config
-brew pyenv
-brew python
-brew python@3.8
-brew rbenv
-brew readline
-brew redpen
-brew ruby
-brew ruby-build
-brew rust
-brew sqlite
-brew terraform
-brew tig
-brew unbound
-brew vim
-brew xz
-
-tap homebrew/cask
-cask clipy
-cask google-chrome
-cask google-japanese-ime
-cask google-drive-file-stream
-cask iterm2
-cask slack
-cask visual-studio-code
-
-tap argon/mas
-brew mas
-
-tap fujiwara/tap
-brew aswrap
-
-tap itchyny/fillin
-
-tap rcmdnk/file
-brew brew-file
-
-tap sanemat/font
+mas "Display Menu", id: 549083868
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
