@@ -37,6 +37,7 @@
       - { name: ricty, install_options: [ '--with-powerline' ] }
       - { name: ruby-build }
       - { name: rust }
+      - { name: terraform }
       - { name: tig }
       - { name: vim }
       #- { name: zsh }
