@@ -5,3 +5,5 @@ if !(which brew > /dev/null); then
 fi
 brew install mas
 brew bundle
+cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts
+fc-cache -vf
