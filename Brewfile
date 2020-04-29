@@ -35,7 +35,7 @@ brew "vim"
 brew "argon/mas/mas"
 brew "fujiwara/tap/aswrap"
 brew "rcmdnk/file/brew-file"
-
+brew "sanemat/font/ricty"
 cask "clipy"
 cask "google-chrome"
 cask "google-drive-file-stream"
